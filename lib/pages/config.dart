@@ -12,14 +12,24 @@ class _ConfigState extends State<Config> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text(
-          'Config Page',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 30,
+          child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.warning, size: 48, color: Colors.orangeAccent),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('CURRENTLY BUILDING',
+                  style: TextStyle(fontSize: 25, color: Colors.white)),
+              Text(
+                'Or maybe not',
+                style: TextStyle(color: Colors.grey, fontSize: 10),
+              )
+            ],
           ),
-        ),
-      ),
+          Icon(Icons.warning, size: 48, color: Colors.orangeAccent),
+        ],
+      )),
     );
   }
 }

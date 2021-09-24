@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:next_events/api/notification_service.dart';
+import 'package:provider/provider.dart';
 import '../shared/date_utilites.dart';
 
 class TimerCard extends StatefulWidget {
@@ -41,6 +43,7 @@ class _TimerCardState extends State<TimerCard> {
 
   @override
   Widget build(BuildContext context) {
+
     if (timeRemaining != '') {
       return Column(
         children: [

@@ -6,11 +6,15 @@ import 'package:next_events/pages/done.dart';
 import 'package:next_events/pages/events.dart';
 import 'package:provider/provider.dart';
 
+import 'api/notification_service.dart';
 import 'data/EventData.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (BuildContext context) => EventsData(),
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (BuildContext context) => EventsData()),
+        ChangeNotifierProvider(create: (_) => NotificationService())
+      ],
       child: MaterialApp(home: Main())));
 }
 
